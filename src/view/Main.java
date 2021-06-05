@@ -23,5 +23,7 @@ public class Main extends PApplet{
 	public void draw() {
 		background(40);
 		mainController.drawScene();
+		
+		
 	}
 } 

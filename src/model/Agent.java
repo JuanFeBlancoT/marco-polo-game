@@ -51,8 +51,23 @@ public class Agent implements Runnable{
 
 	@Override
 	public void run() {
-			drawAgent();
-			moveAgent();		
+			moveAgent();
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
 	}
 	
 	

@@ -25,9 +25,10 @@ public class World {
 			color = app.color(app.random(255),app.random(255),app.random(255));
 			Agent agent = new Agent(app, x, y, color);
 			agents.add(agent);
+			
 		}
 		
-		marco = new Marco(app);
+		marco = new Marco(app, this);
 	}
 
 	public ArrayList<Agent> getAgents() {
@@ -45,6 +46,16 @@ public class World {
 	public void setMarco(Marco marco) {
 		this.marco = marco;
 	}
+
+	public void sendMessage() {
+		app.textSize(16);
+		for (Agent agent : agents) {
+			app.text(agent.getPosX()+","+agent.getPosY(), agent.getPosX()-20, agent.getPosY()-20);
+		}
+	}
+
+
+	
 	
 	
 }
