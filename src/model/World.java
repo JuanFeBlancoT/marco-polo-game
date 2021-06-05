@@ -10,6 +10,7 @@ public class World {
 	
 	private PApplet app;
 	private ArrayList<Agent> agents;
+	private Marco marco;
 	
 	public World(PApplet app) {
 		agents = new ArrayList<>();
@@ -25,6 +26,8 @@ public class World {
 			Agent agent = new Agent(app, x, y, color);
 			agents.add(agent);
 		}
+		
+		marco = new Marco(app);
 	}
 
 	public ArrayList<Agent> getAgents() {
@@ -33,6 +36,14 @@ public class World {
 
 	public void setAgents(ArrayList<Agent> agents) {
 		this.agents = agents;
+	}
+
+	public Marco getMarco() {
+		return marco;
+	}
+
+	public void setMarco(Marco marco) {
+		this.marco = marco;
 	}
 	
 	

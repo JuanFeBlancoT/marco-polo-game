@@ -11,12 +11,15 @@ public class MainController {
 	public MainController(PApplet app) {
 		this.app = app;
 		world = new World(app);
+		
+		
 	}
 	
 	public void drawScene() {
 		for (int i = 0; i < world.getAgents().size(); i++) {
-			world.getAgents().get(i).run();
+			new Thread(world.getAgents().get(i)).start();
 		}
+		world.getMarco().run();
 	}
 
 }

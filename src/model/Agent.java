@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Agent extends Thread{
+public class Agent implements Runnable{
 
 	public final static int SIZE = 40;	
 	
@@ -18,6 +18,7 @@ public class Agent extends Thread{
 		posY = y;
 		colorAgent = ca;
 		this.app = app;
+		//assign random starting directions
 		moveH = (int) app.random(2)+1;
 		if(moveH == 2) {
 			moveH = -1;
@@ -47,9 +48,12 @@ public class Agent extends Thread{
 			moveV *= -1;
 		}
 	}
-	
+
+	@Override
 	public void run() {
-		drawAgent();
-		moveAgent();
+			drawAgent();
+			moveAgent();		
 	}
+	
+	
 }
